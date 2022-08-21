@@ -7,7 +7,7 @@ export const useCalculator = ({
   time,
 }: IUseCalculatorProps) => {
   const [taxas, setTaxas] = useState<ITaxas[]>([]);
-  const [roi, setRoi] = useState(0);
+  const [returnInvested, setReturnInvested] = useState(0);
 
   useEffect(() => {
     api
@@ -19,13 +19,13 @@ export const useCalculator = ({
   setTimeout(() => {
     const taxa = taxas.find((taxa) => taxa.nome === "Selic");
     if (taxa) {
-      setRoi(
+      setReturnInvested(
         investedAmount * ((taxa.valor / 12 / 100) * time) + investedAmount
       );
     }
   }, 500);
 
   return {
-    roi,
+    returnInvested,
   };
 };
