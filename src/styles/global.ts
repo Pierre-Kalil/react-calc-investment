@@ -7,7 +7,9 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing:border-box ;
   }
 
-  :root{}
+  :root{
+    --black: #1e1e1e;
+  }
 
   @media (max-width: 1080px) {
     html {
