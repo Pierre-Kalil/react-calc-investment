@@ -13,6 +13,10 @@ export const InputContainer = styled.div`
     border: none;
     align-items: center;
     color: var(--black);
+
+    ::placeholder {
+      color: var(--black);
+    }
   }
 
   input:focus {

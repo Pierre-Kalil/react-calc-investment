@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FormContainer = styled.form`
   width: 90%;
-  height: 300px;
+  height: 18rem;
 
   display: flex;
   flex-direction: column;
@@ -12,9 +12,9 @@ export const FormContainer = styled.form`
   text-align: center;
 
   @media (min-width: 767px) {
-    width: 50%;
+    width: 90%;
   }
   @media (min-width: 1024px) {
-    width: 40%;
+    width: 80%;
   }
 `;

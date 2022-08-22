@@ -13,6 +13,26 @@ export const HomeContainer = styled.section`
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    height: 8rem;
+
+    width: 90%;
+    height: 10rem;
+  }
+
+  @media (min-width: 768px) {
+    .header {
+      width: 55%;
+      p {
+        font-size: 1.3rem;
+      }
+    }
+    form {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .header {
+      width: 50%;
+    }
   }
 `;

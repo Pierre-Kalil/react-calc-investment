@@ -9,6 +9,7 @@ export const Input = ({ placeholder, onChange, name, type }: IInputProps) => {
         onChange={onChange}
         name={name}
         type={type}
+        required
       />
     </InputContainer>
   );

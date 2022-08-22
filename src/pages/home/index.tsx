@@ -13,14 +13,18 @@ export const Home = () => {
   };
 
   const callBack = async () => {
-    localStorage.setItem("investedAmount", values["investedAmount"]);
-    localStorage.setItem("time", values["time"]);
+    localStorage.setItem("investedAmount", values["investedAmount"] || "");
+    localStorage.setItem("time", values["time"] || "");
+    localStorage.setItem(
+      "result",
+      returnInvested.toFixed(2).replace(".", ",") || ""
+    );
     navigate("/result");
   };
 
   const { onChange, onSubmit, values } = useForm(callBack, initialState);
 
-  const {} = useCalculator(
+  const { returnInvested } = useCalculator(
     Number(values["investedAmount"]),
     Number(values["time"])
   );
@@ -28,7 +32,7 @@ export const Home = () => {
   return (
     <HomeContainer>
       <div className="header">
-        <h1>Faça uma simulação de investimento</h1>
+        <h1>Faça uma simulação de investimento com base na taxa Selic</h1>
         <p>Informe o valor que pretende investir</p>
         <p>E o período, em meses, para receber investimento </p>
       </div>

@@ -5,9 +5,15 @@ export const ButtonContainer = styled.button`
   padding: 1.1rem 0rem;
 
   border-radius: 7px;
+  border: none;
 
-  background-color: #c0c0c0;
+  background: rgba(255, 255, 255, 0.4);
   color: var(--black);
   text-align: center;
   font-size: 1.5rem;
+
+  &:hover {
+    background-color: snow;
+    transition: all 0.3s ease-in;
+  }
 `;
