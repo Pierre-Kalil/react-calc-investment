@@ -31,6 +31,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background: #1e1e1e;
+    color: snow;
   }
 
   li{

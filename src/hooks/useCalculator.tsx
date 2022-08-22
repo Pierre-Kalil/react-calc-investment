@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { api } from "../api/api";
-import { ITaxas, IUseCalculatorProps } from "../types/types";
+import { ITaxas } from "../types/types";
 
-export const useCalculator = ({
-  investedAmount,
-  time,
-}: IUseCalculatorProps) => {
+export const useCalculator = (investedAmount: number, time: number) => {
   const [taxas, setTaxas] = useState<ITaxas[]>([]);
   const [returnInvested, setReturnInvested] = useState(0);
 

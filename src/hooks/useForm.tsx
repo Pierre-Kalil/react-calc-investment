@@ -1,15 +1,21 @@
 import { useState } from "react";
+import { ILogin, IUseCalculatorProps } from "../types/types";
 
-export const useForm = (callback: () => void, initialState = {}) => {
-  const [values, setValues] = useState(initialState);
+export const useForm = (
+  callBack: () => Promise<void>,
+  initialState: IUseCalculatorProps | ILogin
+) => {
+  const [values, setValues] = useState<IUseCalculatorProps | ILogin>(
+    initialState
+  );
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    callback();
+    await callBack();
   };
 
   return {
