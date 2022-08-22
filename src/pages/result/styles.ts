@@ -10,6 +10,11 @@ export const ResultContainer = styled.section`
   height: 100vh;
   position: relative;
 
+  h1 {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+
   a {
     position: absolute;
     top: 2rem;
@@ -18,7 +23,7 @@ export const ResultContainer = styled.section`
 
     &:hover {
       color: #ccc;
-      transition: 0.5s ease;
+      transition: 0.8s ease;
     }
   }
 
@@ -32,15 +37,20 @@ export const ResultContainer = styled.section`
     padding: 20px;
 
     border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 
     background: snow;
     color: var(--black);
   }
 
-  @media (min-width: 767px) {
+  @media (min-width: 800px) {
     .card-result {
       width: 50%;
+
+      h1 {
+        width: 50%;
+        margin-left: 25%;
+      }
     }
   }
 `;

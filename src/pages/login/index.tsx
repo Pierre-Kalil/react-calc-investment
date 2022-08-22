@@ -5,6 +5,9 @@ import { ILogin } from "../../types/types";
 import { LoginContainer } from "./styles";
 import login from "../../assets/login.png";
 
+import toast from "react-hot-toast";
+import { DB } from "../../db";
+
 export const Login = () => {
   const navigate = useNavigate();
   const initialState: ILogin = {
@@ -13,10 +16,17 @@ export const Login = () => {
   };
 
   const callBack = async () => {
-    navigate("/home");
+    if (
+      DB[0]["email"] === values["email"] &&
+      DB[0]["password"] === values["password"]
+    ) {
+      toast.success(`Bem vindo, ${DB[0].name}`);
+      return navigate("/home");
+    }
+    toast.error("Erro");
   };
 
-  const { onChange, onSubmit } = useForm(callBack, initialState);
+  const { onChange, onSubmit, values } = useForm(callBack, initialState);
 
   return (
     <LoginContainer>
