@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { api } from "../api/api";
 import { ITaxas } from "../types/types";
 
@@ -6,7 +6,7 @@ export const useCalculator = (investedAmount: number, time: number) => {
   const [taxas, setTaxas] = useState<ITaxas[]>([]);
   const [returnInvested, setReturnInvested] = useState(0);
 
-  useEffect(() => {
+  useMemo(() => {
     api
       .get("/taxas/v1")
       .then((res) => setTaxas(res.data))

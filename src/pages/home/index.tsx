@@ -7,6 +7,7 @@ import { useCalculator } from "../../hooks/useCalculator";
 
 export const Home = () => {
   const navigate = useNavigate();
+
   const initialState: IUseCalculatorProps = {
     investedAmount: 0,
     time: 0,

@@ -8,9 +8,16 @@ export const Result = () => {
     result: localStorage.getItem("result") || "",
   };
 
+  const handleSignup = () => localStorage.clear();
+
   return (
     <ResultContainer>
-      <Link to="/home">Nova simulação</Link>
+      <Link id="home" to="/home">
+        Nova simulação
+      </Link>
+      <Link id="exit" onClick={handleSignup} to="/">
+        Sair
+      </Link>
       <div className="card-result">
         <h1>Resultado após o periodo aplicado</h1>
         <h3>Valor investido </h3>

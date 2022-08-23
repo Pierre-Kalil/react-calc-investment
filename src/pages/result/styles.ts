@@ -15,10 +15,22 @@ export const ResultContainer = styled.section`
     border-bottom: 1px solid #ccc;
   }
 
-  a {
+  #home {
     position: absolute;
     top: 2rem;
     left: 2rem;
+    color: snow;
+
+    &:hover {
+      color: #ccc;
+      transition: 0.8s ease;
+    }
+  }
+
+  #exit {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
     color: snow;
 
     &:hover {

@@ -13,10 +13,6 @@ describe("Login Form", () => {
     );
   };
 
-  afterAll(() => {
-    render(<Button children="" type="submit" />);
-  });
-
   test("investedAmount input should be rendered", () => {
     setup();
 
