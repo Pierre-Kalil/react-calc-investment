@@ -1,0 +1,13 @@
+services:
+  giro:
+    container_name: tech
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+    command: yarn start
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
