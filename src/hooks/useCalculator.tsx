@@ -13,7 +13,6 @@ export const useCalculator = (investedAmount: number, time: number) => {
       .catch((err) => console.log(err));
   }, [investedAmount, time]);
 
-  console.log(taxas);
   setTimeout(() => {
     const taxa = taxas.find((taxa) => taxa.nome === "Selic");
     if (taxa) {
