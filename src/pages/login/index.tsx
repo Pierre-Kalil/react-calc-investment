@@ -16,11 +16,9 @@ export const Login = () => {
   };
 
   const callBack = async () => {
-    if (
-      DB[0]["email"] === values["email"] &&
-      DB[0]["password"] === values["password"]
-    ) {
-      toast.success(`Bem vindo, ${DB[0].name}`);
+    const user = DB.find((item) => item.email === values["email"]);
+    if (user && user.password === values["password"]) {
+      toast.success(`Bem vindo, ${user.name}`);
       return navigate("/home");
     }
     toast.error("Erro");
