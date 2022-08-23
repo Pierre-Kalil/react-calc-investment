@@ -23,7 +23,7 @@ yarn
 ### <font color="red"> Rodar aplicação </font>
 
 ```json
-yarn dev
+yarn start
 ```
 
 <br/>
