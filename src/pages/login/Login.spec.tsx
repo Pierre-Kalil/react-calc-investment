@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 
 import { BrowserRouter } from "react-router-dom";
 import { Login } from ".";
-import { Button } from "../../components/button";
 
 describe("Login Form", () => {
   const setup = () => {
@@ -27,11 +26,10 @@ describe("Login Form", () => {
     expect(passwordInputEl).toBeTruthy();
   });
 
-  test("enviar button should be rendered", () => {
+  test("entrar button should be rendered", () => {
     setup();
-    render(<Button children="Enviar" type="submit" />);
 
-    const ennviarButtonEl = screen.getByText("Enviar");
+    const ennviarButtonEl = screen.getByRole("button", { name: /Entrar/i });
     expect(ennviarButtonEl).toBeTruthy();
   });
 });

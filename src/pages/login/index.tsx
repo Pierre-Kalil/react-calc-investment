@@ -21,7 +21,7 @@ export const Login = () => {
       toast.success(`Bem vindo, ${user.name}`);
       return navigate("/home");
     }
-    toast.error("Erro");
+    toast.error("Algo saiu errado, tente novamente");
   };
 
   const { onChange, onSubmit, values } = useForm(callBack, initialState);
